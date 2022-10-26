@@ -90,6 +90,7 @@ public class ShootingJoystick : MonoBehaviour
         joystickVec = Vector2.zero;
         joystick.transform.position = joystickOgPos;
         joystickBG.transform.position = joystickOgPos;
+        FindObjectOfType<Player>().canShoot = false;
         //Debug.Log("Up");
     }
 }

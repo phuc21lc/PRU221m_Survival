@@ -22,6 +22,11 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletSpeed = 2.0f;
     public bool canShoot = false;
+
+    private float activeMoveSpeed;
+    public float dashSpeed;
+
+    public float dashLength = .5f, dashCooldown = 1f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,37 +43,41 @@ public class Player : MonoBehaviour
         if (joystick.joystickVec.y != 0)
         {
             rb.velocity = new Vector2(joystick.joystickVec.x * playerSpeed, joystick.joystickVec.y * playerSpeed);
-        } else
+        }
+        else
         {
             rb.velocity = Vector2.zero;
         }
-        Shoot();
-        
+        FirstSpawn -= Time.deltaTime;
+        if (canShoot == true)
+        {
+            Shoot();
+        }
+
     }
 
     void Aim()
     {
-        if(shootingJoystick.joystickVec != Vector2.zero)
+        if (shootingJoystick.joystickVec != Vector2.zero)
         {
             crosshair.transform.localPosition = shootingJoystick.joystickVec * crosshairDistance;
         }
     }
     void Shoot()
     {
-        if(canShoot == true)
+
+        Vector2 shootingDirection = crosshair.transform.localPosition;
+        shootingDirection.Normalize();
+
+        if (FirstSpawn <= 0f)
         {
-            Vector2 shootingDirection = crosshair.transform.localPosition;
-            shootingDirection.Normalize();
-            FirstSpawn -= Time.deltaTime;
-            if (FirstSpawn <= 0f)
-            {
-                GameObject arrow = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                arrow.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
-                arrow.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
-                Destroy(arrow, 2.0f);
-                FirstSpawn = timeToSpawn;
-            }
+            GameObject arrow = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            arrow.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
+            arrow.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
+            Destroy(arrow, 2.0f);
+            FirstSpawn = timeToSpawn;
         }
+
 
     }
 }
