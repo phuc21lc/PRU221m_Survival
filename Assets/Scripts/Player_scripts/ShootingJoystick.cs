@@ -13,6 +13,7 @@ public class ShootingJoystick : MonoBehaviour
     private float joystickRadius;
 
     bool aiming = false;
+    public GameObject player;
 
     public GameObject bulletPrefab;
     public float bulletSpeed = 2.0f;
@@ -21,8 +22,13 @@ public class ShootingJoystick : MonoBehaviour
     public float FirstSpawn = 3f;
 
     public GameObject crosshair;
+    public GameObject gun;
     public float crosshairDistance = 1.0f;
 
+    public bool facingRight = true;
+    Vector2 GameObjectRotation;
+    private float GameObjectRotation2;
+    private float GameObjectRotation3;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +40,40 @@ public class ShootingJoystick : MonoBehaviour
     {
         if (joystickVec != Vector2.zero)
         {
-            crosshair.transform.localPosition = joystickVec * crosshairDistance;
+
+            GameObjectRotation = new Vector2(joystickVec.x, joystickVec.y);
+            GameObjectRotation3 = GameObjectRotation.x;
+
+            if (facingRight)
+            {
+                //Rotates the object if the player is facing right
+                GameObjectRotation2 = GameObjectRotation.x + GameObjectRotation.y * 90;
+                gun.transform.rotation = Quaternion.Euler(0f, 0f, GameObjectRotation2);
+            }
+            else
+            {
+                //Rotates the object if the player is facing left
+                GameObjectRotation2 = GameObjectRotation.x + GameObjectRotation.y * -90;
+                gun.transform.rotation = Quaternion.Euler(0f, 180f, -GameObjectRotation2);
+            }
+            if (GameObjectRotation3 < 0 && facingRight)
+            {
+                // Executes the void: Flip()
+                Flip();
+            }
+            else if (GameObjectRotation3 > 0 && !facingRight)
+            {
+                // Executes the void: Flip()
+                Flip();
+            }
         }
+    }
+    private void Flip()
+    {
+        // Flips the player.
+        facingRight = !facingRight;
+
+        //player.transform.Rotate(0, 180, 0);
     }
     void Shoot()
     {
@@ -50,7 +88,7 @@ public class ShootingJoystick : MonoBehaviour
             Destroy(arrow, 2.0f);
             FirstSpawn = timeToSpawn;
         }
-        
+
     }
     public void PointerDown()
     {
@@ -61,10 +99,9 @@ public class ShootingJoystick : MonoBehaviour
         joystick.transform.position = Input.mousePosition;
         joystickBG.transform.position = Input.mousePosition;
         joystickTouchPos = Input.mousePosition;
-        
         //Debug.Log("Down");
     }
-    
+
     public void Drag(BaseEventData baseEventData)
     {
         PointerEventData pointerEventData = baseEventData as PointerEventData;

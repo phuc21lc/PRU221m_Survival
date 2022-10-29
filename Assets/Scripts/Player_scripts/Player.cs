@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     Animate animate;
 
     public GameObject crosshair;
-    public float crosshairDistance = 1.0f;
 
     public float timeToSpawn = 1f;
     public float FirstSpawn = 3f;
@@ -23,10 +22,8 @@ public class Player : MonoBehaviour
     public float bulletSpeed = 2.0f;
     public bool canShoot = false;
 
-    private float activeMoveSpeed;
-    public float dashSpeed;
-
-    public float dashLength = .5f, dashCooldown = 1f;
+    private bool isDashButtonDown;
+    [SerializeField] float dashAmount = 50f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,8 +35,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        movementVector.x = Input.GetAxisRaw("Horizontal");
-        movementVector.y = Input.GetAxisRaw("Vertical");
         if (joystick.joystickVec.y != 0)
         {
             rb.velocity = new Vector2(joystick.joystickVec.x * playerSpeed, joystick.joystickVec.y * playerSpeed);
@@ -53,16 +48,23 @@ public class Player : MonoBehaviour
         {
             Shoot();
         }
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isDashButtonDown = true;
+        }
+        Dash();
     }
 
-    void Aim()
+    void Dash()
     {
-        if (shootingJoystick.joystickVec != Vector2.zero)
+        if (isDashButtonDown)
         {
-            crosshair.transform.localPosition = shootingJoystick.joystickVec * crosshairDistance;
+            
+            rb.velocity = new Vector2(joystick.joystickVec.x * dashAmount, joystick.joystickVec.y * dashAmount);
+            isDashButtonDown = false;
         }
     }
+    
     void Shoot()
     {
 
