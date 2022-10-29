@@ -278,12 +278,15 @@ MonoBehaviour:
   joystick: {fileID: 1476178520}
   joystickBG: {fileID: 1917764271}
   joystickVec: {x: 0, y: 0}
+  player: {fileID: 539339657}
   bulletPrefab: {fileID: 3736520990322870325, guid: a0368bd0cd6f80349996106afd10c342, type: 3}
   bulletSpeed: 1
   timeToSpawn: 1
   FirstSpawn: 3
   crosshair: {fileID: 1085481227}
+  gun: {fileID: 1817550843}
   crosshairDistance: 2
+  facingRight: 1
 --- !u!114 &250237469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +699,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &539339657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1989387748799371445, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+  m_PrefabInstance: {fileID: 1989387748905140399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &564413332 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 649166718662378880, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
@@ -1806,6 +1814,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1817550843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3921462908650805309, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+  m_PrefabInstance: {fileID: 1989387748905140399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1861978675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1989387750297225884, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
@@ -2234,6 +2247,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1962398464235620400, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.759609
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962398464235620400, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.734
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962398464235620400, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.391
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973499559514902662, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387748799371445, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2278,6 +2307,14 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1222589481}
+    - target: {fileID: 1989387750297225880, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: dashSpeed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387750297225880, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: dashAmount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387750297225880, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: shootingJoystick
       value: 
