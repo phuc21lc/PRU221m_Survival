@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public float bulletSpeed = 2.0f;
     public bool canShoot = false;
 
+    [SerializeField] private LayerMask dashLayer;
     private bool isDashButtonDown;
     [SerializeField] float dashAmount = 50f;
     // Start is called before the first frame update
@@ -59,16 +60,16 @@ public class Player : MonoBehaviour
     {
         if (isDashButtonDown)
         {
-            
             rb.velocity = new Vector2(joystick.joystickVec.x * dashAmount, joystick.joystickVec.y * dashAmount);
+            
             isDashButtonDown = false;
         }
     }
-    
+
     void Shoot()
     {
 
-        Vector2 shootingDirection = crosshair.transform.localPosition;
+        Vector2 shootingDirection = crosshair.transform.position;
         shootingDirection.Normalize();
 
         if (FirstSpawn <= 0f)
