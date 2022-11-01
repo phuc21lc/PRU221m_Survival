@@ -6,23 +6,24 @@ public class Player : MonoBehaviour
 {
     public MovementJoystick joystick;
 
+    public ShootingJoystick shootingJoystick;
     [SerializeField]
     public float playerSpeed;
     private Rigidbody2D rb;
     Vector3 movementVector;
     Animate animate;
 
-    //public GameObject crosshair;
+    public GameObject crosshair;
 
-    //public float timeToSpawn = 1f;
-    //public float FirstSpawn = 3f;
+    public float timeToSpawn = 1f;
+    public float FirstSpawn = 3f;
 
-    //public GameObject bulletPrefab;
-    //public float bulletSpeed = 2.0f;
-    //public bool canShoot = false;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 2.0f;
+    public bool canShoot = false;
 
     [SerializeField] private LayerMask dashLayer;
-    public bool isDashButtonDown;
+    private bool isDashButtonDown;
     [SerializeField] float dashAmount = 50f;
     // Start is called before the first frame update
     void Awake()
@@ -43,12 +44,11 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
-        
-        //if (canShoot == true)
-        //{
-        //    FirstSpawn -= Time.deltaTime;
-        //    Shoot();
-        //}
+        FirstSpawn -= Time.deltaTime;
+        if (canShoot == true)
+        {
+            Shoot();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isDashButtonDown = true;
@@ -61,25 +61,26 @@ public class Player : MonoBehaviour
         if (isDashButtonDown)
         {
             rb.velocity = new Vector2(joystick.joystickVec.x * dashAmount, joystick.joystickVec.y * dashAmount);
-            Debug.Log("Dashed");
+            
             isDashButtonDown = false;
         }
     }
 
-    //void Shoot()
-    //{
+    void Shoot()
+    {
 
-    //    if (FirstSpawn <= 0f)
-    //    {
-    //        GameObject arrow = Instantiate(bulletPrefab, crosshair.transform.position, Quaternion.identity);
-    //        arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(shootingJoystick.joystickVec.x * bulletSpeed, shootingJoystick.joystickVec.y * bulletSpeed);
-    //        //arrow.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
-    //        //Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-    //        //rb.AddForce(crosshair.transform.forward * bulletSpeed);
-    //        Destroy(arrow, 2.0f);
-    //        FirstSpawn = timeToSpawn;
-    //    }
+        Vector2 shootingDirection = crosshair.transform.position;
+        shootingDirection.Normalize();
+
+        if (FirstSpawn <= 0f)
+        {
+            GameObject arrow = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            arrow.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
+            arrow.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
+            Destroy(arrow, 2.0f);
+            FirstSpawn = timeToSpawn;
+        }
 
 
-    //}
+    }
 }
