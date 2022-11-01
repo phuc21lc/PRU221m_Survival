@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7202068365729928623}
   - component: {fileID: -9173848770853384411}
   - component: {fileID: 834169529848243752}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,3 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 2
+  healOrbPrefab: {fileID: 3895759570341151699, guid: 13486b9bfc5457a4cafb6e664170128c, type: 3}
+  hp: 10
+  dmg: 1

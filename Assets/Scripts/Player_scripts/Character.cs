@@ -29,4 +29,10 @@ public class Character : MonoBehaviour
         }
         hpBar.SetState(currentHp, maxHp);
     }
+
+    public void heal(int healAmount)
+    {
+        currentHp += healAmount;
+        hpBar.SetState(currentHp, maxHp);
+    }
 }
