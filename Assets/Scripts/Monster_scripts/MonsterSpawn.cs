@@ -1,3 +1,4 @@
+using Assets.Scripts.Monster_Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,10 +33,12 @@ public class MonsterSpawn : MonoBehaviour
     private IObjectPool<EMelee> meleeElitePools;
     private IObjectPool<ERanged> rangedElitePools;
     private AbstractMonsterFtr _monsterFactory;
+
     private void Awake()
     {
         //create pool for creeps only
         _monsterFactory = new CreepFactory();
+        var melee = _monsterFactory.CreateMelee();
         meleeCreepPools = new ObjectPool<CreepMelees>(
             () => { return Instantiate(MeleeCreep); },
             creep => { creep.gameObject.SetActive(true); },
