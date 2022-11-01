@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EMelee : MonoBehaviour, IMelee
 {
+    private int hp;
+
     private Action<EMelee> _action;
     public void Init(Action<EMelee> action)
     {
