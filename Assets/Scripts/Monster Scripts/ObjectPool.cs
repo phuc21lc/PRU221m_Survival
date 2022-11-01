@@ -35,7 +35,7 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
-    public void OnDestroy(GameObject gameObject)
+    public void OnDestroy()
     {
         gameObject.SetActive(false);
     }
