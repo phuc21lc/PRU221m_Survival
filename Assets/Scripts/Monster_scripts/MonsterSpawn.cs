@@ -1,3 +1,6 @@
+using Assets.Scripts.Monster_Scripts;
+using Assets.Scripts.Monster_Scripts.Melee;
+using Assets.Scripts.Monster_Scripts.Ranged;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,37 +10,39 @@ public class MonsterSpawn : MonoBehaviour
 {
     [Header("Creep:")]
     [SerializeField]
-    private CreepMelees MeleeCreep;
+    private MeleeCreep meleeCreep;
     [SerializeField]
     private int numberOfMeleeCreep;
     [SerializeField]
-    private CreepRanged2 RangedCreep;
+    private RangedCreep rangedCreep;
     [SerializeField]
     private int numberOfRangedCreep;
     [Header("Elite:")]
     [SerializeField]
-    private EMelee MeleeCreepElite;
+    private MeleeElite meleeElite;
     [SerializeField]
     private int numberOfMeleeCreepElite;
     [SerializeField]
-    private ERanged RangedCreepElite;
+    private RangedElite rangeElite;
     [SerializeField]
     private int numberOfRangedCreepElite;
 
     [Header("Camera:")]
     [SerializeField]
     private Camera cameraPosition;
-    private IObjectPool<CreepMelees> meleeCreepPools;
-    private IObjectPool<CreepRanged2> rangedCreepPools;
-    private IObjectPool<EMelee> meleeElitePools;
-    private IObjectPool<ERanged> rangedElitePools;
+    private IObjectPool<MeleeCreep> meleeCreepPools;
+    private IObjectPool<RangedCreep> rangedCreepPools;
+    private IObjectPool<MeleeElite> meleeElitePools;
+    private IObjectPool<RangedElite> rangedElitePools;
     private AbstractMonsterFtr _monsterFactory;
+
     private void Awake()
     {
         //create pool for creeps only
         _monsterFactory = new CreepFactory();
-        meleeCreepPools = new ObjectPool<CreepMelees>(
-            () => { return Instantiate(MeleeCreep); },
+        var melee = _monsterFactory.CreateMelee();
+        meleeCreepPools = new ObjectPool<MeleeCreep>(
+            () => { return Instantiate(meleeCreep); },
             creep => { creep.gameObject.SetActive(true); },
             creep => { creep.gameObject.SetActive(false); },
             creep => { Destroy(creep.gameObject); },
@@ -45,8 +50,8 @@ public class MonsterSpawn : MonoBehaviour
             numberOfMeleeCreep,
             100
             );
-        rangedCreepPools = new ObjectPool<CreepRanged2>(
-            () => { return Instantiate(RangedCreep); },
+        rangedCreepPools = new ObjectPool<RangedCreep>(
+            () => { return Instantiate(rangedCreep); },
             creep => { creep.gameObject.SetActive(true); },
             creep => { creep.gameObject.SetActive(false); },
             creep => { Destroy(creep.gameObject); },
@@ -57,8 +62,8 @@ public class MonsterSpawn : MonoBehaviour
 
 
         _monsterFactory = new EliteFactory();
-        meleeElitePools = new ObjectPool<EMelee>(
-            () => { return Instantiate(MeleeCreepElite); },
+        meleeElitePools = new ObjectPool<MeleeElite>(
+            () => { return Instantiate(meleeElite); },
             creep => { creep.gameObject.SetActive(true); },
             creep => { creep.gameObject.SetActive(false); },
             creep => { Destroy(creep.gameObject); },
@@ -66,8 +71,8 @@ public class MonsterSpawn : MonoBehaviour
             numberOfMeleeCreepElite,
             100
             );
-        rangedElitePools = new ObjectPool<ERanged>(
-            () => { return Instantiate(RangedCreepElite); },
+        rangedElitePools = new ObjectPool<RangedElite>(
+            () => { return Instantiate(rangeElite); },
             creep => { creep.gameObject.SetActive(true); },
             creep => { creep.gameObject.SetActive(false); },
             creep => { Destroy(creep.gameObject); },
@@ -108,19 +113,19 @@ public class MonsterSpawn : MonoBehaviour
             creep.Init(KillRangedElite);
         }
     }
-    private void KillMeleeCreep(CreepMelees creep)
+    private void KillMeleeCreep(MeleeCreep creep)
     {
         meleeCreepPools.Release(creep);
     }
-    private void KillRangedCreep(CreepRanged2 creep)
+    private void KillRangedCreep(RangedCreep creep)
     {
         rangedCreepPools.Release(creep);
     }
-    private void KillMeleeElite(EMelee creep)
+    private void KillMeleeElite(MeleeElite creep)
     {
         meleeElitePools.Release(creep);
     }
-    private void KillRangedElite(ERanged creep)
+    private void KillRangedElite(RangedElite creep)
     {
         rangedElitePools.Release(creep);
     }
