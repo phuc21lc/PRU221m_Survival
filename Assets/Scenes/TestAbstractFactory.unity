@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 130873591}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &189221733
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &662344427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1029926748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1357455929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,14 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604c5ab136e030a449b1df581263ccec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeCreep: {fileID: 6036186755080967196, guid: 2d85dbe958bdfd44aa937d93e824a41c, type: 3}
-  rangedCreep: {fileID: 26422386497841431, guid: 6441b2c9220bcbf45a0efcb1925ef3b8, type: 3}
-  meleeElite: {fileID: 423319206329847627, guid: 6c472af3bcfaad240b69c9f53a8f2426, type: 3}
-  rangedElite: {fileID: 5148865747107015610, guid: c1f005745569a8b4b8a18b77c4538a01, type: 3}
-  numberOfMeleeCreep: 5
-  numberOfRangedCreep: 4
-  numberOfMeleeElite: 3
-  numberOfRangedElite: 2
 --- !u!1 &1882391221
 GameObject:
   m_ObjectHideFlags: 0
