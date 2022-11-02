@@ -34,11 +34,17 @@ public class PauseMenu : MonoBehaviour
     {Time.timeScale = 1f;
         SceneManager.LoadScene("MenuScene");
     }
-    void Pause()
+   public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPause = true;
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
     // Update is called once per frame
     void Update()
