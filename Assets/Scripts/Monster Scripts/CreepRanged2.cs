@@ -4,9 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreepRanged2 : MonoBehaviour, IRanged
+public class CreepRanged2 : MonsterBase, IRanged
 {
-    private Action<CreepRanged2> _action;    
+    private Action<CreepRanged2> _action;
+
+    public CreepRanged2(float hp, float attackDamage, float attackRange)
+    {
+        Hp = hp;
+        AttackDamage = attackDamage;
+        AttackRange = attackRange;
+    }
 
     public void Init(Action<CreepRanged2> action)
     {
