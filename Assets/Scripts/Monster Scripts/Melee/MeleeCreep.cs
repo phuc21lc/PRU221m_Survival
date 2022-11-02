@@ -13,7 +13,7 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         private MonsterSetting _monsterSetting;
 
         private Transform player;
-        
+
         private Sprite _sprite;
         private string _name;
         private float _hp, _attackDamage, _attackRange, _speed;
@@ -67,7 +67,7 @@ namespace Assets.Scripts.Monster_Scripts.Melee
             //float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
             //if (distanceFromPlayer < AttackRange)
             //{
-                transform.position = Vector2.MoveTowards(this.transform.position, player.position, _speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.position, _speed * Time.deltaTime);
             //}
         }
         private void OnDestroy()
