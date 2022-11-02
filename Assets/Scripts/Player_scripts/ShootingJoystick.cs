@@ -21,8 +21,8 @@ public class ShootingJoystick : MonoBehaviour
     public float timeToSpawn = 1f;
     public float FirstSpawn = 3f;
 
-    public GameObject crosshair;
     public GameObject gun;
+    public GameObject gun2;
     public float crosshairDistance = 1.0f;
 
     public bool facingRight = true;
@@ -40,7 +40,6 @@ public class ShootingJoystick : MonoBehaviour
     {
         if (joystickVec != Vector2.zero)
         {
-
             GameObjectRotation = new Vector2(joystickVec.x, joystickVec.y);
             GameObjectRotation3 = GameObjectRotation.x;
 
@@ -49,12 +48,14 @@ public class ShootingJoystick : MonoBehaviour
                 //Rotates the object if the player is facing right
                 GameObjectRotation2 = GameObjectRotation.x + GameObjectRotation.y * 90;
                 gun.transform.rotation = Quaternion.Euler(0f, 0f, GameObjectRotation2);
+                gun2.transform.rotation = Quaternion.Euler(0f, 0f, GameObjectRotation2);
             }
             else
             {
                 //Rotates the object if the player is facing left
                 GameObjectRotation2 = GameObjectRotation.x + GameObjectRotation.y * -90;
                 gun.transform.rotation = Quaternion.Euler(0f, 180f, -GameObjectRotation2);
+                gun2.transform.rotation = Quaternion.Euler(0f, 180f, -GameObjectRotation2);
             }
             if (GameObjectRotation3 < 0 && facingRight)
             {
@@ -75,21 +76,7 @@ public class ShootingJoystick : MonoBehaviour
 
         //player.transform.Rotate(0, 180, 0);
     }
-    void Shoot()
-    {
-        Vector2 shootingDirection = crosshair.transform.localPosition;
-        shootingDirection.Normalize();
-        FirstSpawn -= Time.deltaTime;
-        if (FirstSpawn <= 0f)
-        {
-            GameObject arrow = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            arrow.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
-            arrow.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
-            Destroy(arrow, 2.0f);
-            FirstSpawn = timeToSpawn;
-        }
-
-    }
+    
     public void PointerDown()
     {
         Vector3 pos = Input.mousePosition;
@@ -119,7 +106,8 @@ public class ShootingJoystick : MonoBehaviour
             joystick.transform.position = joystickTouchPos + joystickVec * joystickRadius;
         }
         Aim();
-        FindObjectOfType<Player>().canShoot = true;
+        FindObjectOfType<Gun>().canShoot = true;
+        //FindObjectOfType<Gun1>().canShoot = true;
         //Debug.Log("Drag");
     }
     public void PointerUp()
@@ -127,7 +115,9 @@ public class ShootingJoystick : MonoBehaviour
         joystickVec = Vector2.zero;
         joystick.transform.position = joystickOgPos;
         joystickBG.transform.position = joystickOgPos;
-        FindObjectOfType<Player>().canShoot = false;
+        FindObjectOfType<Gun>().canShoot = false;
+        
+        //FindObjectOfType<Gun1>().canShoot = false;
         //Debug.Log("Up");
     }
 }
