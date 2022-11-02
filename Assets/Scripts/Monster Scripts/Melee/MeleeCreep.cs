@@ -13,29 +13,13 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         private MonsterSetting _monsterSetting;
 
         private Transform player;
-        
+
         private Sprite _sprite;
         private string _name;
         private float _hp, _attackDamage, _attackRange, _speed;
 
         public MeleeCreep()
         {
-        }
-        private Action<MeleeCreep> _action;
-        public void Init(Action<MeleeCreep> action)
-        {
-            _action = action;
-        }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.transform.CompareTag("Player"))
-            {
-                _action(this);
-            }
-        }
-        private void OnBecameInvisible()
-        {
-            _action(this);
         }
 
         public override Sprite Sprite { get => _sprite; set => _sprite = value; }
@@ -68,14 +52,22 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         }
         private void Start()
         {
+
             Debug.Log($"Monster name: {_name}, Hp: {_hp}, Attack damage: {_attackDamage}, Attack range: {_attackRange}, Speed: {_speed}");
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                Destroy(gameObject);
+            }
         }
         private void Update()
         {
             //float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
             //if (distanceFromPlayer < AttackRange)
             //{
-                transform.position = Vector2.MoveTowards(this.transform.position, player.position, _speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.position, _speed * Time.deltaTime);
             //}
         }
         private void OnDestroy()
