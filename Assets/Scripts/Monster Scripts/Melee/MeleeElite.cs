@@ -1,4 +1,5 @@
 using Assets.Scripts.Monster_Scripts;
+using Assets.Scripts.Monster_Scripts.Ranged;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +19,22 @@ public class MeleeElite : MonsterBase, IMelee
     public MeleeElite()
     {
     }
-
+    private Action<MeleeElite> _action;
+    public void Init(Action<MeleeElite> action)
+    {
+        _action = action;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            _action(this);
+        }
+    }
+    private void OnBecameInvisible()
+    {
+        _action(this);
+    }
     public override Sprite Sprite { get => _sprite; set => _sprite = value; }
     public override string Name { get => _name; set => _name = value; }
     public override float Hp { get => _hp; set => _hp = value; }
@@ -51,13 +67,13 @@ public class MeleeElite : MonsterBase, IMelee
     {
         Debug.Log($"Monster name: {_name}, Hp: {_hp}, Attack damage: {_attackDamage}, Attack range: {_attackRange}, Speed: {_speed}");
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
     private void Update()
     {
         //float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
