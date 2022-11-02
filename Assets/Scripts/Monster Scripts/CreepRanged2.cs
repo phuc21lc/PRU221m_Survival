@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CreepRanged2 : MonoBehaviour, IRanged
 {
-    private Action<CreepRanged2> _action;    
+    private Action<CreepRanged2> _action;
 
     public void Init(Action<CreepRanged2> action)
     {
