@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public float timeToSpawn = 1f;
     public float FirstSpawn = 3f;
-
+    public Animator animator;
     public GameObject bulletPrefab;
     public float bulletSpeed = 2.0f;
     public bool canShoot = false;
@@ -39,10 +39,22 @@ public class Player : MonoBehaviour
         if (joystick.joystickVec.y != 0)
         {
             rb.velocity = new Vector2(joystick.joystickVec.x * playerSpeed, joystick.joystickVec.y * playerSpeed);
+            if (joystick.joystickVec.x > 0)
+            {
+                animator.SetBool("IsRight", true);
+                animator.SetBool("IsLeft", false);
+            }
+            else if (joystick.joystickVec.x < 0)
+            {
+                animator.SetBool("IsLeft", true);
+                animator.SetBool("IsRight", false);
+            }
         }
         else
         {
             rb.velocity = Vector2.zero;
+            animator.SetBool("IsRight", false);
+            animator.SetBool("IsLeft", false);
         }
         FirstSpawn -= Time.deltaTime;
         if (canShoot == true)
