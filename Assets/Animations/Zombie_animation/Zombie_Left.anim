@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Left
+  m_Name: Zombie_Left
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -39,13 +39,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 6380666d709a88f4881e372af74e3c49, type: 3}
+      value: {fileID: 21300000, guid: d0841f86070c4de4480ddcb81736ddda, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 311228291e14b844c9d76ecec2381652, type: 3}
+      value: {fileID: 21300000, guid: d649cfd148f308749aed4ed77d805b2c, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: aa88badd019f9804b9d2dc87cb6e4e7d, type: 3}
+      value: {fileID: 21300000, guid: cd99287efcd3e7b4f9865f06534df003, type: 3}
     - time: 0.25
-      value: {fileID: 21300000, guid: 16ee8b6d2dc0f544f9f66375b80a13bd, type: 3}
+      value: {fileID: 21300000, guid: e49011b514da864448e33eee84d7d5de, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -72,10 +72,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 6380666d709a88f4881e372af74e3c49, type: 3}
-    - {fileID: 21300000, guid: 311228291e14b844c9d76ecec2381652, type: 3}
-    - {fileID: 21300000, guid: aa88badd019f9804b9d2dc87cb6e4e7d, type: 3}
-    - {fileID: 21300000, guid: 16ee8b6d2dc0f544f9f66375b80a13bd, type: 3}
+    - {fileID: 21300000, guid: d0841f86070c4de4480ddcb81736ddda, type: 3}
+    - {fileID: 21300000, guid: d649cfd148f308749aed4ed77d805b2c, type: 3}
+    - {fileID: 21300000, guid: cd99287efcd3e7b4f9865f06534df003, type: 3}
+    - {fileID: 21300000, guid: e49011b514da864448e33eee84d7d5de, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

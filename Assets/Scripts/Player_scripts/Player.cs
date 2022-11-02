@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     Vector3 movementVector;
     Animate animate;
-
+    public Animator animator;
     //public GameObject crosshair;
 
     //public float timeToSpawn = 1f;
@@ -38,12 +38,24 @@ public class Player : MonoBehaviour
         if (joystick.joystickVec.y != 0)
         {
             rb.velocity = new Vector2(joystick.joystickVec.x * playerSpeed, joystick.joystickVec.y * playerSpeed);
+            if (joystick.joystickVec.x > 0)
+            {
+                animator.SetBool("IsRight", true);
+                animator.SetBool("IsLeft", false);
+            }
+            else if (joystick.joystickVec.x < 0)
+            {
+                animator.SetBool("IsLeft", true);
+                animator.SetBool("IsRight", false);
+            }
         }
         else
         {
             rb.velocity = Vector2.zero;
+            animator.SetBool("IsRight", false);
+            animator.SetBool("IsLeft", false);
         }
-        
+
         //if (canShoot == true)
         //{
         //    FirstSpawn -= Time.deltaTime;

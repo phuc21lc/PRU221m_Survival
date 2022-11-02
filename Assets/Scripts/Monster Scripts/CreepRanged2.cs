@@ -15,6 +15,10 @@ public class CreepRanged2 : MonsterBase, IRanged
         AttackRange = attackRange;
     }
 
+    public CreepRanged2()
+    {
+    }
+
     public void Init(Action<CreepRanged2> action)
     {
         _action = action;
