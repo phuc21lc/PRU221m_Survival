@@ -447,7 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imgCd: {fileID: 421952874}
   txtCd: {fileID: 1497815581}
-  gun: {fileID: 1255283110}
+  gun: {fileID: 1817550843}
   cdTime: 10
   cdTimer: 0
   effectTime: 5
@@ -1888,7 +1888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1255283111
 Transform:
   m_ObjectHideFlags: 0
@@ -1919,10 +1919,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingJoystick: {fileID: 250237468}
   timeToSpawn: 1
-  FirstSpawn: 3
+  FirstSpawn: 1
   bulletPrefab: {fileID: 3736520990322870325, guid: a0368bd0cd6f80349996106afd10c342, type: 3}
-  bulletSpeed: 2
-  canShoot: 0
+  bulletSpeed: 8
+  canShoot: 1
   crosshair: {fileID: 850969200}
 --- !u!212 &1255283113
 SpriteRenderer:
@@ -2822,9 +2822,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingJoystick: {fileID: 250237468}
   timeToSpawn: 1
-  FirstSpawn: 3
+  FirstSpawn: 1
   bulletPrefab: {fileID: 3736520990322870325, guid: a0368bd0cd6f80349996106afd10c342, type: 3}
-  bulletSpeed: 2
+  bulletSpeed: 8
   canShoot: 1
   crosshair: {fileID: 1692861157}
 --- !u!4 &1861978675 stripped
@@ -3366,7 +3366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3921462908650805309, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6376907093509053933, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_LocalPosition.x
