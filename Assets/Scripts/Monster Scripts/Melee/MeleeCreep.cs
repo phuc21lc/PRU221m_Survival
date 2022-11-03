@@ -21,7 +21,12 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         public MeleeCreep()
         {
         }
+        private Action<MeleeCreep> _action;
 
+        public void Init(Action<MeleeCreep> action)
+        {
+            _action = action;
+        }
         public override Sprite Sprite { get => _sprite; set => _sprite = value; }
         public override string Name { get => _name; set => _name = value; }
         public override float Hp { get => _hp; set => _hp = value; }
@@ -57,9 +62,15 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         }
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (Hp <= 0)
             {
-                Destroy(gameObject);
+                _action(this);
+            }
+            if (collision.transform.tag.Equals("Player"))
+            {
+                //DEAL DAMAGE TO PLAYER
+                //Destroy(gameObject);
+                _action(this);
             }
         }
         private void Update()
@@ -67,7 +78,7 @@ namespace Assets.Scripts.Monster_Scripts.Melee
             //float distanceFromPlayer = Vector2.Distance(player.transform.position, transform.position);
             //if (distanceFromPlayer < AttackRange)
             //{
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, _speed * Time.deltaTime);
+            Move();
             //}
         }
         private void OnDestroy()
@@ -76,12 +87,12 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         }
         public void Move()
         {
-            throw new NotImplementedException();
+            transform.position = Vector2.MoveTowards(this.transform.position, player.position, _speed * Time.deltaTime);
         }
 
         public void Attack()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

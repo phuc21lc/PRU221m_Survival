@@ -1,4 +1,5 @@
 using Assets.Scripts.Monster_Scripts;
+using Assets.Scripts.Monster_Scripts.Melee;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +19,12 @@ public class MeleeElite : MonsterBase, IMelee
     public MeleeElite()
     {
     }
+    private Action<MeleeElite> _action;
 
+    public void Init(Action<MeleeElite> action)
+    {
+        _action = action;
+    }
     public override Sprite Sprite { get => _sprite; set => _sprite = value; }
     public override string Name { get => _name; set => _name = value; }
     public override float Hp { get => _hp; set => _hp = value; }
@@ -53,9 +59,15 @@ public class MeleeElite : MonsterBase, IMelee
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (Hp <= 0)
         {
-            Destroy(gameObject);
+            _action(this);
+        }
+        if (collision.transform.tag.Equals("Player"))
+        {
+            //DEAL DAMAGE TO PLAYER
+            //Destroy(gameObject);
+            _action(this);
         }
     }
     private void Update()
