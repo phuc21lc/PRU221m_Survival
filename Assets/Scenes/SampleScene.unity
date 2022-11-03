@@ -9173,6 +9173,46 @@ PrefabInstance:
       propertyPath: bar
       value: 
       objectReference: {fileID: 1103208980}
+    - target: {fileID: 1989387749147868564, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387749147868564, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: GameObjectToSpawn
+      value: 
+      objectReference: {fileID: 5155747431637718034, guid: c3d533395accb534ba6a5e5f01e58167, type: 3}
+    - target: {fileID: 1989387749351857436, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387749351857436, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: GameObjectToSpawn
+      value: 
+      objectReference: {fileID: 7343834831586172966, guid: aa794d39b8c60d44a99b4c57caa8d485, type: 3}
+    - target: {fileID: 1989387749678249787, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387749678249787, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: GameObjectToSpawn
+      value: 
+      objectReference: {fileID: 7376822952008257681, guid: 2eef72a476f19d742947085ed7c16b0e, type: 3}
+    - target: {fileID: 1989387749805468906, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387749805468906, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: GameObjectToSpawn
+      value: 
+      objectReference: {fileID: 7343834831586172966, guid: aa794d39b8c60d44a99b4c57caa8d485, type: 3}
+    - target: {fileID: 1989387750253835278, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387750253835278, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: GameObjectToSpawn
+      value: 
+      objectReference: {fileID: 5155747431637718034, guid: c3d533395accb534ba6a5e5f01e58167, type: 3}
     - target: {fileID: 1989387750297225880, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: animator
       value: 
@@ -9237,6 +9277,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1989387750741939868, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387750741939868, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: GameObjectToSpawn
+      value: 
+      objectReference: {fileID: 7376822952008257681, guid: 2eef72a476f19d742947085ed7c16b0e, type: 3}
     - target: {fileID: 2331062868461167020, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: bar
       value: 
