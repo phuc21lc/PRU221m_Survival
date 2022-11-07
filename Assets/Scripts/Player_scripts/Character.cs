@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    
     public int maxHp = 1000;
     public int currentHp = 1000;
     // Start is called before the first frame update
@@ -13,13 +14,11 @@ public class Character : MonoBehaviour
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {
 
     }
-
     public void takeDamage(int damage)
     {
         currentHp -= damage;

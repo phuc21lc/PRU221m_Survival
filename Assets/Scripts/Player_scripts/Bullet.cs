@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     public int dmg = 100;
     Enemy enemy;
+    
     // Start is called before the first frame update
     void Start()
     {

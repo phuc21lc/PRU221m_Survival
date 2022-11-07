@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7266022110892624428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7266022110892624431}
+  - component: {fileID: 7266022110892624430}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7266022110892624431
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266022110892624428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7266022110892624430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266022110892624428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604c5ab136e030a449b1df581263ccec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeCreep: {fileID: 1756150368837633340, guid: 2d85dbe958bdfd44aa937d93e824a41c, type: 3}
+  rangedCreep: {fileID: 8310249930496616735, guid: 6441b2c9220bcbf45a0efcb1925ef3b8, type: 3}
+  meleeElite: {fileID: 3315776887563476631, guid: 6c472af3bcfaad240b69c9f53a8f2426, type: 3}
+  rangedElite: {fileID: 1693866822706073789, guid: c1f005745569a8b4b8a18b77c4538a01, type: 3}
+  numberOfMeleeCreep: 10
+  numberOfRangedCreep: 10
+  numberOfMeleeElite: 5
+  numberOfRangedElite: 5
+  spawnCreepTime: 3
+  spawnEliteTime: 6
