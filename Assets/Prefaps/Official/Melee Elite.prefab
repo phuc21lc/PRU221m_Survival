@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8787324637729473263}
   - component: {fileID: 834115989662622682}
   - component: {fileID: 3315776887563476631}
+  - component: {fileID: 6358013158969722972}
   m_Layer: 0
   m_Name: Melee Elite
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: b8928c50d88c85a4d883edd153338ae2, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,3 +99,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: a6e1c802e3b2c5c4faac17a7b8f22061, type: 2}
+--- !u!95 &6358013158969722972
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467561778366157601}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d15a940d77906694190d1d2c95996c35, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

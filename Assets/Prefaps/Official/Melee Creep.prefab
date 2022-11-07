@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4530515563700334476}
   - component: {fileID: 4305282623556394346}
   - component: {fileID: 1756150368837633340}
+  - component: {fileID: 3586134896526285053}
   m_Layer: 0
   m_Name: Melee Creep
   m_TagString: Untagged
@@ -98,3 +99,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: 48fc02299af5856419db13f4c9747f21, type: 2}
+--- !u!95 &3586134896526285053
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061286297323318839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: edcea9f7d8d663e4eb01c47198294206, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

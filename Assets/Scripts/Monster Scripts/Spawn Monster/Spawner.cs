@@ -50,6 +50,9 @@ public class Spawner : MonoBehaviour
     private IObjectPool<RangedElite> rangedElitePools;
 
     private AbstractMonsterFtr factory;
+
+    [SerializeField]
+    private GameObject[] spawnSpot;
     private void Awake()
     {
         camGO = GameObject.FindGameObjectWithTag("MainCamera");
@@ -72,7 +75,7 @@ public class Spawner : MonoBehaviour
         //rangedCreeps = new List<RangedCreep>();
         //meleeElites = new List<MeleeElite>();
         //rangedElites = new List<RangedElite>();
-
+        #region Object Pooling
         meleeCreepPools = new ObjectPool<MeleeCreep>(() =>
         {
             return Instantiate(meleeCreep);
@@ -156,6 +159,7 @@ public class Spawner : MonoBehaviour
         numberOfRangedElite,
         numberOfRangedElite * 5
         );
+        #endregion
     }
     private void Start()
     {
@@ -190,7 +194,7 @@ public class Spawner : MonoBehaviour
             spawnEliteTimer = 0;
         }
     }
-
+    #region Kill Creep
     private void KillMeleeCreep(MeleeCreep creep)
     {
         meleeCreepPools.Release(creep);
@@ -207,18 +211,22 @@ public class Spawner : MonoBehaviour
     {
         rangedElitePools.Release(creep);
     }
+    #endregion
+    #region Spawn
     private void SpawnElite(Bounds bounds, Bounds outOfBounds)
     {
         for (int i = 0; i < numberOfMeleeElite / 2; i++)
         {
             var me = meleeElitePools.Get();
-            me.transform.position = randomSpot(bounds, outOfBounds);
+            //me.transform.position = randomSpot(bounds, outOfBounds);
+            me.transform.position = spawnCreep();
             me.Init(KillMeleeElite);
         }
         for (int i = 0; i < numberOfRangedElite / 2; i++)
         {
             var re = rangedElitePools.Get();
-            re.transform.position = randomSpot(bounds, outOfBounds);
+            //re.transform.position = randomSpot(bounds, outOfBounds);
+            re.transform.position = spawnCreep();
             re.Init(KillRangedElite);
         }
     }
@@ -227,13 +235,15 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < numberOfMeleeCreep/2; i++)
         {
             var mc = meleeCreepPools.Get();
-            mc.transform.position = randomSpot(bounds, outOfBounds);
+            //mc.transform.position = randomSpot(bounds, outOfBounds);
+            mc.transform.position = spawnCreep();
             mc.Init(KillMeleeCreep);
         }
         for (int i = 0; i < numberOfRangedCreep / 2; i++)
         {
             var rc = rangedCreepPools.Get();
-            rc.transform.position = randomSpot(bounds,outOfBounds);
+            //rc.transform.position = randomSpot(bounds,outOfBounds);
+            rc.transform.position = spawnCreep();
             rc.Init(KillRangedCreep);
         }
 
@@ -261,9 +271,42 @@ public class Spawner : MonoBehaviour
         //    rangedElites.Add(go);
         //}
     }
+    #endregion
+
+    private Vector3 spawnCreep()
+    {
+        Vector3 vector3 = new Vector3();
+        int random = Random.Range(0, 6);
+        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //switch (random)
+        //{
+        //    case 0:
+        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //        break;
+        //    case 1:
+        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //        break;
+        //    case 2:
+        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //        break;
+        //    case 3:
+        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //        break;
+        //    case 4:
+        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //        break;
+        //    case 5:
+        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
+        //        break;
+        //    default:
+        //        break;
+        //}
+        return vector3;
+    }
+
     private Vector3 randomSpot(Bounds bounds, Bounds outOfBounds)
     {
-        int random = Random.Range(0, 4);
+        int random = Random.Range(0, 6);
         float spawnSpotX = 0, spawnSpotY = 0;
         switch (random)
         {
@@ -286,6 +329,7 @@ public class Spawner : MonoBehaviour
             default:
                 break;
         }
+        
         Vector3 spawnSpot = new Vector3(spawnSpotX, spawnSpotY, 0);
         //spawnSpot = Camera.main.ViewportToWorldPoint(spawnSpot);
         return spawnSpot;

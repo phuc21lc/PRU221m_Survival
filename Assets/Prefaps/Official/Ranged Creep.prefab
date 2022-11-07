@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2337026775479106816}
   - component: {fileID: 5132541625068738717}
   - component: {fileID: 8310249930496616735}
+  - component: {fileID: 8057785686990699949}
   m_Layer: 0
   m_Name: Ranged Creep
   m_TagString: Untagged
@@ -98,3 +99,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: 8486023978b4c824da1fecff4e70af6b, type: 2}
+--- !u!95 &8057785686990699949
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921200122032984923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df09530dd3cb4584986be1cba3b791c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
