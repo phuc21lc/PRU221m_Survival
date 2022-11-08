@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     StatusBar hpBar;
+
     void Start()
     {
 
@@ -24,7 +26,7 @@ public class Character : MonoBehaviour
         currentHp -= damage;
         if (currentHp <= 0)
         {
-            Debug.Log("Character is dead GAMEOVER");
+            SceneManager.LoadScene("GameOverScene");
         }
         hpBar.SetState(currentHp, maxHp);
     }
