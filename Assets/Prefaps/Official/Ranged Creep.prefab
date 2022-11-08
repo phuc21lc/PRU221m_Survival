@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &883379938332419457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7016502807157803522}
+  m_Layer: 7
+  m_Name: RangedBulletParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7016502807157803522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883379938332419457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2337026775479106816}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4921200122032984923
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,7 +43,7 @@ GameObject:
   - component: {fileID: 5132541625068738717}
   - component: {fileID: 8310249930496616735}
   - component: {fileID: 8057785686990699949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ranged Creep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +61,8 @@ Transform:
   m_LocalPosition: {x: -5.2110395, y: -0.48323426, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7016502807157803522}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,6 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: 8486023978b4c824da1fecff4e70af6b, type: 2}
+  rangedBullet: {fileID: 1872669554677434505, guid: b2ce844d869e86b478608697a5420171, type: 3}
+  rangedBulletParent: {fileID: 883379938332419457}
+  numberOfRangedBullet1: 1
 --- !u!95 &8057785686990699949
 Animator:
   serializedVersion: 4

@@ -4036,7 +4036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 850969201}
   - component: {fileID: 850969202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: crosshair_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5413,7 +5413,7 @@ GameObject:
   - component: {fileID: 1255283111}
   - component: {fileID: 1255283113}
   - component: {fileID: 1255283112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: gun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8671,8 +8671,16 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7266022110892624430, guid: 68d3042084247e64590ccf105192ef5b, type: 3}
+      propertyPath: numberOfMeleeCreep
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266022110892624430, guid: 68d3042084247e64590ccf105192ef5b, type: 3}
+      propertyPath: numberOfMeleeElite
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266022110892624430, guid: 68d3042084247e64590ccf105192ef5b, type: 3}
       propertyPath: numberOfRangedCreep
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7266022110892624430, guid: 68d3042084247e64590ccf105192ef5b, type: 3}
       propertyPath: numberOfRangedElite
@@ -9304,14 +9312,26 @@ PrefabInstance:
       propertyPath: shootingJoystick
       value: 
       objectReference: {fileID: 250237468}
+    - target: {fileID: 586250170683264472, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387748799371445, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387748799371445, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1989387748851936662, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: bar
       value: 
       objectReference: {fileID: 1103208980}
+    - target: {fileID: 1989387748851936664, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387749147868564, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9320,6 +9340,10 @@ PrefabInstance:
       propertyPath: GameObjectToSpawn
       value: 
       objectReference: {fileID: 5155747431637718034, guid: c3d533395accb534ba6a5e5f01e58167, type: 3}
+    - target: {fileID: 1989387749147868566, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387749351857436, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9328,6 +9352,10 @@ PrefabInstance:
       propertyPath: GameObjectToSpawn
       value: 
       objectReference: {fileID: 7343834831586172966, guid: aa794d39b8c60d44a99b4c57caa8d485, type: 3}
+    - target: {fileID: 1989387749351857438, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387749678249787, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9336,6 +9364,10 @@ PrefabInstance:
       propertyPath: GameObjectToSpawn
       value: 
       objectReference: {fileID: 7376822952008257681, guid: 2eef72a476f19d742947085ed7c16b0e, type: 3}
+    - target: {fileID: 1989387749678249789, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387749805468906, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9344,6 +9376,14 @@ PrefabInstance:
       propertyPath: GameObjectToSpawn
       value: 
       objectReference: {fileID: 7343834831586172966, guid: aa794d39b8c60d44a99b4c57caa8d485, type: 3}
+    - target: {fileID: 1989387749805468908, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989387749990490532, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387750253835278, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9352,6 +9392,10 @@ PrefabInstance:
       propertyPath: GameObjectToSpawn
       value: 
       objectReference: {fileID: 5155747431637718034, guid: c3d533395accb534ba6a5e5f01e58167, type: 3}
+    - target: {fileID: 1989387750253835312, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1989387750297225880, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: animator
       value: 
@@ -9424,10 +9468,18 @@ PrefabInstance:
       propertyPath: GameObjectToSpawn
       value: 
       objectReference: {fileID: 7376822952008257681, guid: 2eef72a476f19d742947085ed7c16b0e, type: 3}
+    - target: {fileID: 1989387750741939870, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2331062868461167020, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: bar
       value: 
       objectReference: {fileID: 1537649619}
+    - target: {fileID: 3921462908650805309, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3921462908650805309, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9439,6 +9491,10 @@ PrefabInstance:
     - target: {fileID: 6376907093509053933, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069234808325200186, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 502794f14936d5d4084200af04ad6e6c, type: 3}

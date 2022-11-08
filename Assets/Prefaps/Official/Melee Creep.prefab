@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4305282623556394346}
   - component: {fileID: 1756150368837633340}
   - component: {fileID: 3586134896526285053}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Melee Creep
   m_TagString: Untagged
   m_Icon: {fileID: 0}

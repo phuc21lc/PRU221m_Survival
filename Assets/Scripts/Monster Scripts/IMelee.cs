@@ -5,6 +5,6 @@ using UnityEngine;
 
 public interface IMelee
 {
-    void Move();
+    void Move(float distance);
     void Attack();
 }

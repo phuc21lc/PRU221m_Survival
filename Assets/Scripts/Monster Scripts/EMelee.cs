@@ -26,7 +26,7 @@ public class EMelee : MonoBehaviour, IMelee
         Debug.Log("Elite Melee Attack");
     }
 
-    public void Move()
+    public void Move(float distance)
     {
         Debug.Log("Elite Melee Move");
     }

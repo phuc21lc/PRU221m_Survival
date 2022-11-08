@@ -26,7 +26,7 @@ public class ERanged : MonoBehaviour, IRanged
         Debug.Log("Elite Range Attack");
     }
 
-    public void Move()
+    public void Move(float distance)
     {
         Debug.Log("Elite Range Move");
     }

@@ -215,7 +215,7 @@ public class Spawner : MonoBehaviour
     #region Spawn
     private void SpawnElite(Bounds bounds, Bounds outOfBounds)
     {
-        for (int i = 0; i < numberOfMeleeElite / 2; i++)
+        for (int i = 0; i < numberOfMeleeElite; i++)
         {
             var me = meleeElitePools.Get();
             //me.transform.position = randomSpot(bounds, outOfBounds);
@@ -232,14 +232,14 @@ public class Spawner : MonoBehaviour
     }
     private void SpawnCreeps(Bounds bounds, Bounds outOfBounds)
     {
-        for (int i = 0; i < numberOfMeleeCreep/2; i++)
+        for (int i = 0; i < numberOfMeleeCreep; i++)
         {
             var mc = meleeCreepPools.Get();
             //mc.transform.position = randomSpot(bounds, outOfBounds);
             mc.transform.position = spawnCreep();
             mc.Init(KillMeleeCreep);
         }
-        for (int i = 0; i < numberOfRangedCreep / 2; i++)
+        for (int i = 0; i < numberOfRangedCreep; i++)
         {
             var rc = rangedCreepPools.Get();
             //rc.transform.position = randomSpot(bounds,outOfBounds);
@@ -277,30 +277,7 @@ public class Spawner : MonoBehaviour
     {
         Vector3 vector3 = new Vector3();
         int random = Random.Range(0, 6);
-        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //switch (random)
-        //{
-        //    case 0:
-        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //        break;
-        //    case 1:
-        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //        break;
-        //    case 2:
-        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //        break;
-        //    case 3:
-        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //        break;
-        //    case 4:
-        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //        break;
-        //    case 5:
-        //        vector3 = spawnSpot[random].GetComponent<Transform>().position;
-        //        break;
-        //    default:
-        //        break;
-        //}
+        vector3 = spawnSpot[random].GetComponent<Transform>().position;        
         return vector3;
     }
 

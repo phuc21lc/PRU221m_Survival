@@ -28,7 +28,7 @@ public class CreepRanged2 : MonoBehaviour, IRanged
         Debug.Log("Creep Range Attack");
     }
 
-    public void Move()
+    public void Move(float distance)
     {
         Debug.Log("Creep Range Move");
     }

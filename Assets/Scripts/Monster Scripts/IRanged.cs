@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IRanged
 {
-    void Move();
+    void Move(float distance);
     void Attack();
 }

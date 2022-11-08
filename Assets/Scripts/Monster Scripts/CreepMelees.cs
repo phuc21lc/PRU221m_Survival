@@ -28,7 +28,7 @@ public class CreepMelees : MonoBehaviour, IMelee
         Debug.Log("Creep Melee Attack");
     }
 
-    public void Move()
+    public void Move(float distance)
     {
         Debug.Log("Creep Melee Move");
     }

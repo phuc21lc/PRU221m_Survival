@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5220716719260264786}
   - component: {fileID: 3351164004932665008}
   - component: {fileID: 1693866822706073789}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ranged Elite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
