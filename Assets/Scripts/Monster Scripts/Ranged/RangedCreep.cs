@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.TextCore.Text;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Monster_Scripts.Ranged
 {
@@ -22,6 +23,11 @@ namespace Assets.Scripts.Monster_Scripts.Ranged
         private Action<RangedCreep> _action;
         private Animator animator;
 
+        [SerializeField]
+        GameObject healPickUp;
+        [SerializeField]
+        [Range(0f, 1f)]
+        float chance = 1f;
         //declaration others
         private GameObject mainPlayer;
         private Transform player;
@@ -157,6 +163,10 @@ namespace Assets.Scripts.Monster_Scripts.Ranged
             if (Hp <= 0)
             {
                 _action(this);
+                if (Random.value < chance)
+                {
+                    GameObject t = Instantiate(healPickUp, transform.position, Quaternion.identity);
+                }
             }
         }
         public void Move(float distance)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 834115989662622682}
   - component: {fileID: 3315776887563476631}
   - component: {fileID: 6358013158969722972}
+  - component: {fileID: 1389415275}
   m_Layer: 7
   m_Name: Melee Elite
   m_TagString: Untagged
@@ -99,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: a6e1c802e3b2c5c4faac17a7b8f22061, type: 2}
+  healPickUp: {fileID: 8410667071670223813, guid: c8e4e75fd88802744a6a8d1238313c70, type: 3}
+  chance: 0.326
 --- !u!95 &6358013158969722972
 Animator:
   serializedVersion: 4
@@ -119,3 +122,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1389415275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467561778366157601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d3ea6f4cb5872428b6dd94743785de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

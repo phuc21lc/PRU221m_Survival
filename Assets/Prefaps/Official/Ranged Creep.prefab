@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5132541625068738717}
   - component: {fileID: 8310249930496616735}
   - component: {fileID: 8057785686990699949}
+  - component: {fileID: 521268767}
   m_Layer: 7
   m_Name: Ranged Creep
   m_TagString: Untagged
@@ -131,6 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: 8486023978b4c824da1fecff4e70af6b, type: 2}
+  healPickUp: {fileID: 8410667071670223813, guid: c8e4e75fd88802744a6a8d1238313c70, type: 3}
+  chance: 0.396
   rangedBullet: {fileID: 1872669554677434505, guid: b2ce844d869e86b478608697a5420171, type: 3}
   rangedBulletParent: {fileID: 883379938332419457}
   numberOfRangedBullet1: 1
@@ -154,3 +157,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &521268767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4921200122032984923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d3ea6f4cb5872428b6dd94743785de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

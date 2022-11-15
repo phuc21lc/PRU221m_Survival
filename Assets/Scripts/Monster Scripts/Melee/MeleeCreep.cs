@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Monster_Scripts.Melee
 {
@@ -17,6 +19,12 @@ namespace Assets.Scripts.Monster_Scripts.Melee
         private float _hp, _attackDamage, _attackRange, _speed;
         private Action<MeleeCreep> _action;
         private Animator animator;
+
+        [SerializeField]
+        GameObject healPickUp;
+        [SerializeField]
+        [Range(0f, 1f)]
+        float chance = 1f;
 
         //declaration others
         private GameObject mainPlayer;
@@ -97,6 +105,11 @@ namespace Assets.Scripts.Monster_Scripts.Melee
             if (Hp <= 0)
             {
                 _action(this);
+                if (Random.value < chance)
+                {
+                    GameObject t = Instantiate(healPickUp, transform.position, Quaternion.identity);
+                }
+
             }
         }
         public void Move(float distance)

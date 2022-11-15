@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using Random = UnityEngine.Random;
 
 public class MeleeElite : MonsterBase, IMelee
 {
@@ -16,6 +17,12 @@ public class MeleeElite : MonsterBase, IMelee
     private float _hp, _attackDamage, _attackRange, _speed;
     private Action<MeleeElite> _action;
     private Animator animator;
+
+    [SerializeField]
+    GameObject healPickUp;
+    [SerializeField]
+    [Range(0f, 1f)]
+    float chance = 1f;
 
     //declaration others
     private GameObject mainPlayer;
@@ -100,6 +107,10 @@ public class MeleeElite : MonsterBase, IMelee
         if (Hp <= 0)
         {
             _action(this);
+            if (Random.value < chance)
+            {
+                GameObject t = Instantiate(healPickUp, transform.position, Quaternion.identity);
+            }
         }
     }
     public void Move(float distance)

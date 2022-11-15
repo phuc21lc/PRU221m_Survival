@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSetting: {fileID: 11400000, guid: 48fc02299af5856419db13f4c9747f21, type: 2}
+  healPickUp: {fileID: 8410667071670223813, guid: c8e4e75fd88802744a6a8d1238313c70, type: 3}
+  chance: 0.119
 --- !u!95 &3586134896526285053
 Animator:
   serializedVersion: 4

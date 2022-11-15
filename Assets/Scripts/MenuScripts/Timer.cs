@@ -35,6 +35,11 @@ public class Timer : MonoBehaviour {
     }
     private void Start() {
         ResetTimer();
+        
+        if (SaveGame.Instance.data != null)
+        {
+            timer = SaveGame.Instance.data.timer;
+        }
     }
 
     private void ResetTimer() {
